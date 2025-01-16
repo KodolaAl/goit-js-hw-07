@@ -49,3 +49,18 @@ function imagesTemplate(images) {
   return markup;
 }
 listGallery.insertAdjacentHTML("afterbegin", imagesTemplate(images));
+
+listGallery.style.display = "flex";
+listGallery.style.flexDirection = "row";
+listGallery.style.flexWrap = "wrap";
+listGallery.style.rowGap = "48px";
+listGallery.style.columnGap = "24px";
+listGallery.style.listStyleType = "none";
+listGallery.style.padding = "0";
+const galleryItems = document.querySelectorAll(".gallery-item");
+const galleryImages = document.querySelectorAll(".gallery-img");
+galleryItems.forEach((item) => (item.style.width = "calc((100% - 48px) / 3)"));
+galleryImages.forEach((item) => {
+  item.style.maxWidth = "100%";
+  item.style.height = "100%";
+});
